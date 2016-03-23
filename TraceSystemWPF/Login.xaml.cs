@@ -43,7 +43,6 @@ namespace TraceSystemWPF
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             bool flag = TraceClientProxy.Instance.IsConnected;
-            //TraceClientProxy.Instance.LoadModel();
             Storyboard sbd = Resources["leafLeave"] as Storyboard;
             sbd.Begin();
             Storyboard baiyun = Resources["cloudMove"] as Storyboard;
