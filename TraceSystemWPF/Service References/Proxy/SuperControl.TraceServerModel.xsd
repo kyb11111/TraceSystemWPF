@@ -9,20 +9,17 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="TraceModel" nillable="true" type="tns:TraceModel" />
-  <xs:complexType name="TraceInfo">
+  <xs:complexType name="ProductType">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:TraceModel">
         <xs:sequence>
-          <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="PicInfo" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Product" type="xs:int" />
-          <xs:element minOccurs="0" name="TextInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="TraceInfo" nillable="true" type="tns:TraceInfo" />
+  <xs:element name="ProductType" nillable="true" type="tns:ProductType" />
   <xs:complexType name="UserInfo">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:TraceModel">
@@ -36,23 +33,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="UserInfo" nillable="true" type="tns:UserInfo" />
-  <xs:complexType name="ProductType">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:TraceModel">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ProductType" nillable="true" type="tns:ProductType" />
   <xs:complexType name="Product">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:TraceModel">
         <xs:sequence>
           <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PicInfo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ProductType" type="xs:int" />
+          <xs:element minOccurs="0" name="QrCordeInfo" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="Remark" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="UserInfo" type="xs:int" />
         </xs:sequence>
@@ -60,4 +48,32 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="TraceInfo">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TraceModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DateTime" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PicInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Product" type="xs:int" />
+          <xs:element minOccurs="0" name="QrCordeInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TextInfo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="VideoInfo" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TraceInfo" nillable="true" type="tns:TraceInfo" />
+  <xs:complexType name="ECommerce">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:TraceModel">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Amount" type="xs:int" />
+          <xs:element minOccurs="0" name="Price" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Product" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ECommerce" nillable="true" type="tns:ECommerce" />
 </xs:schema>
