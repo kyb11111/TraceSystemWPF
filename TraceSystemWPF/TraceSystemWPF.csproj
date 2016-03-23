@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ApplicationIcon>dxicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9392138C-D01F-41E0-B95C-E0623B280E4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TraceSystemWPF</RootNamespace>
+    <AssemblyName>TraceSystemWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net40\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Converter\UserInfoUserTypeConverter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converter\ProductTypeConverter.cs" />
+    <Compile Include="Converter\ProductNameConverter.cs" />
+    <Compile Include="Converter\UserNameConverter.cs" />
+    <Compile Include="Dialog\ProductInfoDialog.xaml.cs">
+      <DependentUpon>ProductInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\TraceInfoDialog.xaml.cs">
+      <DependentUpon>TraceInfoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ProductTypePage.xaml.cs">
+      <DependentUpon>ProductTypePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Test.xaml.cs">
+      <DependentUpon>Test.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\UserInfoMangermentPage.xaml.cs">
+      <DependentUpon>UserInfoMangermentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Page\ProductInsertPage.xaml.cs">
+      <DependentUpon>ProductInsertPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\TraceInfoPage.xaml.cs">
+      <DependentUpon>TraceInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\TraceInfoADMINPage.xaml.cs">
+      <DependentUpon>TraceInfoADMINPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ProductInsertAdminPage.xaml.cs">
+      <DependentUpon>ProductInsertAdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\Attributes.cs" />
+    <Compile Include="Proxy\ChildrenModel.cs" />
+    <Compile Include="Proxy\ChildrenModelCollection.cs" />
+    <Compile Include="Proxy\IModelBase.cs" />
+    <Compile Include="Proxy\ModelBase.cs" />
+    <Compile Include="Proxy\ModelCacheManager.cs" />
+    <Compile Include="Proxy\ModelCollection.cs" />
+    <Compile Include="Proxy\ModelMapping.cs" />
+    <Compile Include="Proxy\ParentModel.cs" />
+    <Compile Include="Proxy\TraceClientProxy.cs" />
+    <Compile Include="Service References\Proxy\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Proxy\TraceServiceCallback.cs" />
+    <Compile Include="Tawin\DibToBitmap.cs" />
+    <Compile Include="Tawin\TwainDefs.cs" />
+    <Compile Include="Tawin\TwainLib.cs" />
+    <Compile Include="Tawin\Win32.cs" />
+    <Compile Include="Tawin\WpfTwain.cs" />
+    <Compile Include="Units\EnumUints.cs" />
+    <Compile Include="NHWindow.xaml.cs">
+      <DependentUpon>NHWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Dialog\ProductInfoDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialog\TraceInfoDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Page\ProductTypePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\Test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\UserInfoMangermentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\ProductInsertPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Page\TraceInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Page\TraceInfoADMINPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Page\ProductInsertAdminPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhotoFrame.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NHWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PhotoFrame.xaml.cs">
+      <DependentUpon>PhotoFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Images\Thumbs.db" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Service References\Proxy\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\service.wsdl" />
+    <None Include="Service References\Proxy\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\SuperControl.ServiceModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\SuperControl.TraceServerModel.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Proxy\TraceSystemWPF.Proxy.ModelBase.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="SuperControl.ServiceModel.ModelBase.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close0.png" />
+    <Resource Include="Images\close1.png" />
+    <Resource Include="Images\cloud.png" />
+    <Resource Include="Images\loginbody.png" />
+    <Resource Include="Images\logo32.ico" />
+    <Resource Include="Images\mini0.png" />
+    <Resource Include="Images\mini1.png" />
+    <Resource Include="Images\sun2.png" />
+    <Resource Include="Images\yezi2.png" />
+    <Resource Include="Images\yezi3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="skin\Button\btbg.png" />
+    <Resource Include="skin\Button\btfg.png" />
+    <Resource Include="skin\Button\M.png" />
+    <Resource Include="skin\Button\MAX.png" />
+    <Resource Include="skin\Button\MNI.png" />
+    <Resource Include="skin\Button\x1.png" />
+    <Resource Include="skin\csbt\360AntiVirus.png" />
+    <Resource Include="skin\csbt\360Chrome.png" />
+    <Resource Include="skin\csbt\360Compress.png" />
+    <Resource Include="skin\csbt\360Desktop.png" />
+    <Resource Include="skin\csbt\360EntAdmin.png" />
+    <Resource Include="skin\csbt\360FirstAD.png" />
+    <Resource Include="skin\csbt\360JiShi.png" />
+    <Resource Include="skin\csbt\360se.png" />
+    <Resource Include="skin\csbt\AavanceTools_360Guard.png" />
+    <Resource Include="skin\csbt\AavanceTools_360MobileMgr.png" />
+    <Resource Include="skin\csbt\AavanceTools_360NetRepair.png" />
+    <Resource Include="skin\csbt\AavanceTools_360passwordcheck.png" />
+    <Resource Include="skin\csbt\AavanceTools_360PowerSaver.png" />
+    <Resource Include="skin\csbt\AavanceTools_360QSpeed.png" />
+    <Resource Include="skin\csbt\AavanceTools_360UDiskCheck.png" />
+    <Resource Include="skin\csbt\AavanceTools_360Ys.png" />
+    <Resource Include="skin\csbt\AavanceTools_pic_360cloud.png" />
+    <Resource Include="skin\csbt\AavanceTools_pic_shoujitijian.png" />
+    <Resource Include="skin\csbt\AdvanceTools_NetSpeed.png" />
+    <Resource Include="skin\csbt\AdvanceTool_pic_360LuDaShi.png" />
+    <Resource Include="skin\frame.jpg" />
+    <Resource Include="skin\ico\360DiagnoseScan_413.png" />
+    <Resource Include="skin\ico\ico_AdvTools.png" />
+    <Resource Include="skin\ico\ico_diannaomenzhen.png" />
+    <Resource Include="skin\ico\ico_dsmain.png" />
+    <Resource Include="skin\ico\ico_Examine.png" />
+    <Resource Include="skin\ico\ico_PluginCleaner.png" />
+    <Resource Include="skin\ico\ico_RubbishCleaner.png" />
+    <Resource Include="skin\ico\ico_softmgr.png" />
+    <Resource Include="skin\ico\ico_SpeedupOpt.png" />
+    <Resource Include="skin\ico\ico_SysRepair.png" />
+    <Resource Include="skin\ico\ico_TraceCleaner.png" />
+    <Resource Include="skin\ico\ico_VulRepair.png" />
+    <Resource Include="skin\ico\toolbar_hover.png" />
+    <Resource Include="skin\ico\toolbar_pushed.png" />
+    <Resource Include="skin\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="service.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Proxy\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\Proxy\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BeiLiNu.Ui.Controls\BeiLiNu.Ui.Controls.csproj">
+      <Project>{0208BC3A-2F98-40F7-8D42-DD44E87D9180}</Project>
+      <Name>BeiLiNu.Ui.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PNG\back\bkg_beautifulcity.jpg" />
+    <Resource Include="PNG\back\bkg_bluelight.jpg" />
+    <Resource Include="PNG\back\bkg_blueteacup.jpg" />
+    <Resource Include="PNG\back\bkg_erath.jpg" />
+    <Resource Include="PNG\back\bkg_europlace.jpg" />
+    <Resource Include="PNG\back\bkg_flower.jpg" />
+    <Resource Include="PNG\back\bkg_lightwood.jpg" />
+    <Resource Include="PNG\back\bkg_love.jpg" />
+    <Resource Include="PNG\back\bkg_nightcloud.jpg" />
+    <Resource Include="PNG\back\bkg_nightight.jpg" />
+    <Resource Include="PNG\back\bkg_owl.jpg" />
+    <Resource Include="PNG\back\bkg_pinklight.jpg" />
+    <Resource Include="PNG\back\bkg_prinkearth.jpg" />
+    <Resource Include="PNG\back\bkg_snail.jpg" />
+    <Resource Include="PNG\back\bkg_soilpicture.jpg" />
+    <Resource Include="PNG\back\bkg_southtown.jpg" />
+    <Resource Include="PNG\back\bkg_stars.jpg" />
+    <Resource Include="PNG\back\bkg_titanic.jpg" />
+    <Resource Include="PNG\back\bkg_tulip.jpg" />
+    <Resource Include="PNG\back\bkg_wood.jpg" />
+    <Resource Include="PNG\back\frame.jpg" />
+    <Resource Include="PNG\dxicon.ico" />
+    <Resource Include="PNG\Shadow.png" />
+    <Resource Include="PNG\Shadow透明.png" />
+    <Resource Include="PNG\SystemButton\close_highlight.png" />
+    <Resource Include="PNG\SystemButton\close_normal.png" />
+    <Resource Include="PNG\SystemButton\close_press.png" />
+    <Resource Include="PNG\SystemButton\max_highlight.png" />
+    <Resource Include="PNG\SystemButton\max_normal.png" />
+    <Resource Include="PNG\SystemButton\max_press.png" />
+    <Resource Include="PNG\SystemButton\min_highlight.png" />
+    <Resource Include="PNG\SystemButton\min_normal.png" />
+    <Resource Include="PNG\SystemButton\min_press.png" />
+    <Resource Include="PNG\SystemButton\restore_highlight.png" />
+    <Resource Include="PNG\SystemButton\restore_normal.png" />
+    <Resource Include="PNG\SystemButton\restore_press.png" />
+    <Resource Include="PNG\SystemButton\setup_highlight.png" />
+    <Resource Include="PNG\SystemButton\setup_normal.png" />
+    <Resource Include="PNG\SystemButton\setup_press.png" />
+    <Resource Include="PNG\SystemButton\skin_highlight.png" />
+    <Resource Include="PNG\SystemButton\skin_normal.png" />
+    <Resource Include="PNG\SystemButton\skin_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="dxicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="skin\ico\1.png" />
+    <Resource Include="skin\ico\2.png" />
+    <Resource Include="skin\ico\3.png" />
+    <Resource Include="skin\ico\4.png" />
+    <Resource Include="skin\ico\5.png" />
+    <Resource Include="skin\ico\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="PNG\back\backgroung.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="image\b0.jpg" />
+    <Resource Include="image\b1.jpg" />
+    <Resource Include="image\b2.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

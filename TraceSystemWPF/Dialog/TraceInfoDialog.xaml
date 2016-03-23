@@ -1,0 +1,15 @@
+﻿<controls:MetroWindow x:Class="TraceSystemWPF.Dialog.TraceInfoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="产品详情" Height="662" Width="546" WindowStyle="None"  Background="{x:Null}"  AllowsTransparency="True" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+    </Window.Resources>
+    <Grid Background="LightBlue">
+        <TextBlock x:Name="txtName" Text="" FontSize="18" Margin="36,29,33,557"></TextBlock>
+        <Image x:Name="img" Margin="51,83,57,188"></Image>
+        <TextBlock x:Name="txtProductType" Text="" FontSize="16" Margin="36,59,33,523"></TextBlock>
+        <TextBlock FontSize="16" TextWrapping="Wrap" Margin="36,452,33,34" Name="txtRemark" Text="" />
+    </Grid>
+    </controls:MetroWindow>
+

@@ -1,0 +1,31 @@
+﻿<UserControl xmlns:my="clr-namespace:BeiLiNu.Ui.Controls.WPF.Controls;assembly=BeiLiNu.Ui.Controls"  x:Class="TraceSystemWPF.Page.ProductTypePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:convert="clr-namespace:TraceSystemWPF.Converter"
+             mc:Ignorable="d" Background="Transparent" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <convert:UserInfoUserTypeConverter x:Key="UserInfoUserTypeConverter"></convert:UserInfoUserTypeConverter>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="5,20,5,10" Orientation="Horizontal" Grid.Row="1">
+            <TextBlock Text="分类名称" Margin="5" FontSize="18"></TextBlock>
+            <my:XTextBox Margin="5" x:Name="txtName"/>
+            <my:XButton x:Name="btnAdd" Margin="5"  Click="btnAdd_Click" Foreground="Black"  Content="添加"/>
+            <my:XButton x:Name="btnUpd" Margin="5"  Click="btnUpd_Click" Foreground="Black"  Content="修改"/>
+            <my:XButton x:Name="btnDel" Margin="5"  Click="btnDel_Click" Foreground="Black" Content="删除"/>
+        </StackPanel>
+        <DataGrid Grid.Row="2" x:Name="dg" AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" CanUserResize="True" IsReadOnly="True" CanUserSort="True" Header="用户名" Width="*"/>
+                <DataGridTextColumn Binding="{Binding Remark}"  CanUserResize="True" CanUserSort="True" Header="备注" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

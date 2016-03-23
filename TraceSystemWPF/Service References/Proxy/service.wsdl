@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TraceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ITraceService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1">
+        </msb:BinaryEncoding>
+        <wsaw:UsingAddressing>
+        </wsaw:UsingAddressing>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SuperControl.TraceServerModel" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SuperControl.ServiceModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITraceService_GetServerTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTime" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetServerTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_DownloadTextFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadTextFile" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_DownloadTextFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadTextFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_UploadTextFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTextFile" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_UploadTextFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadTextFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_DeleteFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_DeleteFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_SaveQRCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveQRCode" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_SaveQRCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveQRCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_Verify_InputMessage">
+    <wsdl:part name="parameters" element="tns:Verify" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetClientChcheModelTypeName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientChcheModelTypeName" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetClientChcheModelTypeName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientChcheModelTypeNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAll" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetList" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_GetList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_Excute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Excute" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_Excute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExcuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_InsertModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertModel" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_InsertModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_ExcuteNotify_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ExcuteNotify" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_RealTimeNotify_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RealTimeNotify" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_ErrorNotify_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ErrorNotify" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_ping_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ping" />
+  </wsdl:message>
+  <wsdl:message name="ITraceService_CloseSession_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:CloseSession" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="true" name="ITraceService">
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="GetServerTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/GetServerTime" message="tns:ITraceService_GetServerTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/GetServerTimeResponse" message="tns:ITraceService_GetServerTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="DownloadTextFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/DownloadTextFile" message="tns:ITraceService_DownloadTextFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/DownloadTextFileResponse" message="tns:ITraceService_DownloadTextFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="UploadTextFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/UploadTextFile" message="tns:ITraceService_UploadTextFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/UploadTextFileResponse" message="tns:ITraceService_UploadTextFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="DeleteFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/DeleteFile" message="tns:ITraceService_DeleteFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/DeleteFileResponse" message="tns:ITraceService_DeleteFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="SaveQRCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/SaveQRCode" message="tns:ITraceService_SaveQRCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/SaveQRCodeResponse" message="tns:ITraceService_SaveQRCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="Verify">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/Verify" message="tns:ITraceService_Verify_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="GetClientChcheModelTypeName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/GetClientChcheModelTypeName" message="tns:ITraceService_GetClientChcheModelTypeName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/GetClientChcheModelTypeNameResponse" message="tns:ITraceService_GetClientChcheModelTypeName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="GetListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/GetListAll" message="tns:ITraceService_GetListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/GetListAllResponse" message="tns:ITraceService_GetListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="GetList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/GetList" message="tns:ITraceService_GetList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/GetListResponse" message="tns:ITraceService_GetList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="Excute">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/Excute" message="tns:ITraceService_Excute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/ExcuteResponse" message="tns:ITraceService_Excute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="false" msc:isTerminating="false" name="InsertModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/ITraceService/InsertModel" message="tns:ITraceService_InsertModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/InsertModelResponse" message="tns:ITraceService_InsertModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ExcuteNotify">
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/ExcuteNotify" message="tns:ITraceService_ExcuteNotify_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="RealTimeNotify">
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/RealTimeNotify" message="tns:ITraceService_RealTimeNotify_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ErrorNotify">
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/ErrorNotify" message="tns:ITraceService_ErrorNotify_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="false" name="ping">
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/ping" message="tns:ITraceService_ping_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation msc:isInitiating="true" msc:isTerminating="true" name="CloseSession">
+      <wsdl:output wsaw:Action="http://tempuri.org/ITraceService/CloseSession" message="tns:ITraceService_CloseSession_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_ITraceService" type="tns:ITraceService">
+    <wsp:PolicyReference URI="#CustomBinding_ITraceService_policy">
+    </wsp:PolicyReference>
+    <soap12:binding transport="http://schemas.microsoft.com/soap/tcp" />
+    <wsdl:operation name="GetServerTime">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/GetServerTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DownloadTextFile">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/DownloadTextFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadTextFile">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/UploadTextFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveQRCode">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/SaveQRCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Verify">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/Verify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="GetClientChcheModelTypeName">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/GetClientChcheModelTypeName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAll">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/GetListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetList">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/GetList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Excute">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/Excute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertModel">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/InsertModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExcuteNotify">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/ExcuteNotify" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RealTimeNotify">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/RealTimeNotify" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ErrorNotify">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/ErrorNotify" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ping">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/ping" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseSession">
+      <soap12:operation soapAction="http://tempuri.org/ITraceService/CloseSession" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TraceService">
+    <wsdl:port name="CustomBinding_ITraceService" binding="tns:CustomBinding_ITraceService">
+      <soap12:address location="net.tcp://127.0.0.1:4520/TraceService/net" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://127.0.0.1:4520/TraceService/net</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

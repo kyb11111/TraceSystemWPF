@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SuperControl.ServiceModel" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SuperControl.ServiceModel" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ModelBase">
+    <xs:sequence>
+      <xs:element name="Rid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ModelBase" nillable="true" type="tns:ModelBase" />
+  <xs:complexType name="ArrayOfModelBase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ModelBase" nillable="true" type="tns:ModelBase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfModelBase" nillable="true" type="tns:ArrayOfModelBase" />
+  <xs:complexType name="ArrayOfExcuteAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExcuteAction" nillable="true" type="tns:ExcuteAction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExcuteAction" nillable="true" type="tns:ArrayOfExcuteAction" />
+  <xs:complexType name="ExcuteAction">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExcuteObject" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="ExcuteType" type="tns:ExcuteType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExcuteAction" nillable="true" type="tns:ExcuteAction" />
+  <xs:simpleType name="ExcuteType">
+    <xs:annotation>
+      <xs:appinfo>
+        <ActualType Name="unsignedByte" Namespace="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/2003/10/Serialization/">
+        </ActualType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Insert">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Delete">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Update">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CacheSave">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="CacheRemove">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Registe">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Unregiste">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="GetLog">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Append">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Select">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">16</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExcuteType" nillable="true" type="tns:ExcuteType" />
+  <xs:complexType name="RegisteItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AltKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RegOnly" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Rid" type="xs:int" />
+      <xs:element name="TypeName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RegisteItem" nillable="true" type="tns:RegisteItem" />
+  <xs:complexType name="ArrayOfRealtimeData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RealtimeData" nillable="true" type="tns:RealtimeData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRealtimeData" nillable="true" type="tns:ArrayOfRealtimeData" />
+  <xs:complexType name="RealtimeData">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Data" nillable="true" type="q1:ArrayOfanyType" />
+      <xs:element minOccurs="0" name="Rid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RealtimeData" nillable="true" type="tns:RealtimeData" />
+</xs:schema>

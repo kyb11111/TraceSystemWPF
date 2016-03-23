@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceSystemWPF", "TraceSystemWPF\TraceSystemWPF.csproj", "{9392138C-D01F-41E0-B95C-E0623B280E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeiLiNu.Ui.Controls", "BeiLiNu.Ui.Controls\BeiLiNu.Ui.Controls.csproj", "{0208BC3A-2F98-40F7-8D42-DD44E87D9180}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{9392138C-D01F-41E0-B95C-E0623B280E4D}.Release|x86.ActiveCfg = Release|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{0208BC3A-2F98-40F7-8D42-DD44E87D9180}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
